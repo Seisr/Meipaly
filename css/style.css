@@ -1,0 +1,488 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Oswald", sans-serif;
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  width: 80%;
+  padding: 70px;
+  height: 100%;
+}
+
+header {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  border-bottom: 1px solid #dedcdd;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+}
+
+/* header .container{
+    padding: 40px 0;
+    /* thuộc tính display flex giúp cho các phần tử nằm bên trong thẻ cha dc nằm trên cùng 1 dòng theo trục chính  
+    display: flex;
+    /* thuộc tính justify-content giúp canh chỉnh các thành phần con bên trong theo trục chính (ở đây là trục ngang)  */
+/* center cho các phần tử nằm giữa  
+    justify-content: space-between;
+    align-items: center;
+    /* flex-direction: row-reverse;  
+
+} */
+
+header .header_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav ul li {
+  display: inline;
+  /* justify-content: space-between; */
+  margin-right: 25px;
+}
+
+header .container .header_content .header_logo i {
+  font-size: 40px;
+}
+
+header .header_content .header_logo span {
+  font-size: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+header nav ul li a {
+  text-transform: uppercase;
+  transition: 0.5s;
+  font-weight: bold;
+}
+
+header nav ul li a:hover {
+  color: red;
+}
+header nav ul li a.active {
+  color: red;
+}
+
+.banner {
+  background-image: url("./../img/home_slider.jpg");
+  height: 85vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.banner .banner_content {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+}
+
+.banner .banner_content h1 {
+  line-height: 90px;
+  font-size: 75px;
+  margin-bottom: 20px;
+  width: 30%;
+}
+
+.banner .banner_content button {
+  padding: 15px 30px;
+  color: white;
+  background-color: #e62b4a;
+  border-style: none;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.banner .banner_content button:hover {
+  transition: 0.5s;
+}
+
+.banner .banner_content i {
+  animation-name: downArrow;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  font-size: 25px;
+}
+
+/* service  */
+
+.service {
+  background-color: black;
+  color: white;
+  text-align: center;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.service .service_title .sub_title {
+  color: #d32843;
+}
+
+.service .service_title h1 {
+  font-size: 40px;
+  font-weight: 300px;
+}
+
+.service .service_title p {
+  color: grey;
+  padding: 20px;
+}
+
+.service .services_content i {
+  font-size: 50px;
+}
+
+.service .services_content .services_item {
+  padding: 0 15px;
+  height: 200px;
+}
+
+.service .services_content .services_item .services_item_bg {
+  background-color: white;
+  height: 100%;
+  color: #888888;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.service .slick-dots li button:before {
+  font-size: 14px;
+  color: white;
+}
+
+.service .slick-dots li.slick-active button:before {
+  color: red;
+}
+.service .services_content .services_item .services_item_bg:after {
+  content: "";
+  width: 5px;
+  height: 0%;
+  background-color: red;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: all 0.5s;
+}
+
+.service .services_content .services_item:hover .services_item_bg:after {
+  height: 100%;
+}
+
+/* posts  */
+
+.posts {
+  /* background-color: black; */
+  margin: 30px;
+  color: black;
+  text-align: center;
+  /* height: 50vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.posts .posts_title .sub_title {
+  margin: 30px;
+  color: grey;
+  font-size: 14px;
+}
+
+.posts .posts_title h1 {
+  margin: 30px;
+  font-size: 30px;
+}
+.posts .posts_title p:last-child {
+  color: grey;
+  font-weight: 700px;
+  margin: 30px;
+}
+
+.posts .posts_content {
+  /* display-grid giúp chia các phần tử con bên trong thành dạng cột  */
+  display: grid;
+  /* grid-template-column chia cột  */
+  grid-template-columns: repeat(4, 1fr);
+  /* có thể dùng repeat để chia cột thành nhiều cột có giá trị bằng nhau */
+  gap: 20px;
+}
+
+.posts .posts_content .posts_item img {
+  width: 100%;
+  height: 100%;
+  filter: grayscale(30%) contrast(50%);
+  object-fit: cover;
+}
+
+.posts .posts_content .posts_item:first-child {
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 2;
+}
+
+.posts .posts_content .posts_item:last-child {
+  grid-row: 3 / span 2;
+  grid-column: 3 / span 2;
+}
+
+.posts .posts_content .posts_item {
+  position: relative;
+}
+.posts .posts_content .posts_item .posts_item_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* width: 100%;
+    height: 100%; */
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  background-color: rgb(219, 90, 90);
+  opacity: 0;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  transition: all 0.5s;
+}
+.posts .posts_content .posts_item_overlay .overlay_icon {
+  text-align: right;
+  border: 2px;
+  color: white;
+}
+.posts .posts_content .posts_item_overlay .overlay_content {
+  text-align: left;
+}
+
+.posts .posts_content .posts_item:hover .posts_item_overlay {
+  opacity: 0.7;
+}
+.posts .posts_content .posts_item:hover .posts_item_overlay h3 {
+  color: white;
+}
+
+.posts .posts_content .posts_item :hover .posts_item_overlay p {
+  color: #888888;
+}
+
+.posts .posts_content .posts_item .posts_item_overlay .overlay_icon i {
+  transform: translateY(40px);
+  color: black;
+  padding: 8px;
+  background-color: white;
+}
+
+.posts .posts_content .posts_item:hover .posts_item_overlay .overlay_icon i {
+  transform: translateY(0px);
+  transition: all 0.5s;
+}
+
+.posts .posts_content .overlay_content p {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.posts .posts_content .overlay_content h3 {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* number */
+
+.number {
+  background-color: black;
+  color: white;
+  padding: 40px 0;
+}
+
+.number .number_content {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.number .number_content .number_item {
+  text-align: center;
+}
+.number .number_content .number_item h3 {
+  font-size: 60px;
+}
+.number .number_content .number_item p {
+  color: #888888;
+}
+
+/* exp  */
+
+.exp {
+  background-image: url("./../img/bussiness_img_1.jpg");
+  padding: 80px 0;
+  text-align: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.exp .exp_title .sub_title {
+  color: red;
+}
+
+.exp .exp_title h1 {
+  color: white;
+}
+
+.exp .exp_title p:last-child {
+  color: #888888;
+}
+
+.contact {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.contact .contact_title h2 {
+  font-size: 50px;
+}
+.contact .contact_title p {
+  color: #888888;
+}
+
+.contact .contact_content {
+  display: flex;
+  gap: 20px;
+}
+
+.contact .contact_content .contact_left {
+  width: 60%;
+}
+
+.contact .contact_content .contact_right {
+  width: 40%;
+}
+
+.contact .contact_content .contact_left iframe {
+  width: 100%;
+}
+.contact .contact_content .contact_right form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact .contact_content .contact_right form input,
+textarea {
+  padding: 15px;
+  font-size: 18px;
+  resize: none;
+}
+
+.contact .contact_content .contact_right button {
+  border: 2px;
+  padding: 15px;
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  transition: all 0.25s;
+  cursor: pointer;
+}
+.contact .contact_content .contact_right button:hover {
+  background-color: #d32843;
+}
+
+.contact .contact_title p {
+  margin-bottom: 20px;
+  font-weight: bolder;
+}
+
+/* footer  */
+
+footer .footer_content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: black;
+  height: 200px;
+  color: white;
+  width: 100%;
+  padding: 50px;
+}
+
+footer .footer_icon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer .footer_icon a {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 7px;
+  border-radius: 50%;
+  color: white;
+  margin: 5px;
+  transition: all 0.5s;
+}
+
+footer .footer_icon i {
+  padding: 12px;
+  border-radius: 50%;
+}
+
+footer .footer_icon a:hover {
+  background-color: #d32843;
+}
+
+/* back_to_top  */
+
+.back_to_top {
+  height: 60px;
+  width: 60px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.25);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  position: fixed;
+  right: 50px;
+  bottom: 100px;
+  z-index: 99;
+  border-radius: 2px;
+}
+
+.back_to_top i {
+  visibility: visible;
+  color: white;
+  opacity: 1;
+}
+
+@keyframes downArrow {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+}
